@@ -1,12 +1,21 @@
+import "isomorphic-fetch";
 import '@testing-library/jest-dom'
 import { configure } from '@testing-library/react'
-
+import { server } from './mocks/server'
 configure({ defaultHidden: true })
 
-export interface Global extends NodeJS.Global {
-  URL: any
-}
-declare var global: Global
 
-global.URL.createObjectURL = jest.fn()
-jest.setTimeout(30000)
+beforeAll(() => {
+  // Enable the mocking in tests.
+  server.listen()
+})
+
+afterEach(() => {
+  // Reset any runtime handlers tests may use.
+  server.resetHandlers()
+})
+
+afterAll(() => {
+  // Clean up once the tests are done.
+  server.close()
+})

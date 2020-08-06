@@ -1,29 +1,32 @@
 {
-  "compilerOptions": {
-    "noEmit": true,
-    "jsx": "react",
-    "target": "es5",
-    "types": [
-      "react",
-      "node",
-      "react-dom",
-      "jest"
-    ],
-    "lib": ["dom", "es2015", "DOM.Iterable"],
-    "module": "esnext",
-    "moduleResolution": "node",
-    "esModuleInterop": true,
-    "removeComments": true,
-    "rootDir": "./",
-    "baseUrl": "./",
-    "paths": {
-      "*": ["node_modules", "src"]
-    },
-    "experimentalDecorators": true,
-    "checkJs": false,
-    "strictFunctionTypes": true,
-    "downlevelIteration": true
-  },
   "include": ["src"],
-  "exclude": ["node_modules"]
+  "compilerOptions": {
+    "target": "es5",
+    "module": "esnext",
+    "lib": ["es2015", "dom", "es2016.array.include", "es2017.object"],
+    "importHelpers": true,
+    "declaration": true,
+    "inlineSourceMap": true,
+    "rootDir": "./src",
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictPropertyInitialization": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "moduleResolution": "node",
+    "jsx": "react",
+    "esModuleInterop": true,
+    "outDir": "./lib",
+    "skipLibCheck": true,
+    "declarationMap": true,
+    "downlevelIteration": true,
+    "allowSyntheticDefaultImports": true,
+    "noEmit": true
+  }
 }
