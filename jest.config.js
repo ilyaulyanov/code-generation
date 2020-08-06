@@ -7,7 +7,6 @@ module.exports = {
   transformIgnorePatterns: ['/node_modules/'],
   setupFilesAfterEnv: [
     '@testing-library/jest-dom',
-    '<rootDir>/tools/setupTests.ts',
+    '<rootDir>/src/tools/setupTests.ts',
   ],
-  testURL: 'http://127.0.0.1:80'
 }

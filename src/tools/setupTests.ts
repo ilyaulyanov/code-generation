@@ -1,4 +1,3 @@
-import "isomorphic-fetch";
 import '@testing-library/jest-dom'
 import { configure } from '@testing-library/react'
 import { server } from './mocks/server'
