@@ -26,6 +26,7 @@
     "jest": "^26.2.2",
     "jest-environment-jsdom-sixteen": "^1.0.3",
     "msw": "^0.20.3",
+    "prettier": "^2.0.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "request": "^2.88.2",

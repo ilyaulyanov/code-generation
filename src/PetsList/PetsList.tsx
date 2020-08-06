@@ -1,22 +1,22 @@
-import * as React from "react";
+import * as React from 'react'
 
-import { Pet } from "../models/PetStoreApi";
+import { Pet } from '../models/PetStoreApi'
 
 export const PetsList = () => {
-  const [pets, setPets] = React.useState<Pet[]>([]);
-  const [loading, setLoading] = React.useState(false);
+  const [pets, setPets] = React.useState<Pet[]>([])
+  const [loading, setLoading] = React.useState(false)
 
   React.useEffect(() => {
-    setLoading(true);
-    fetch("http://127.0.0.1:80/pets", {
-      method: "GET",
+    setLoading(true)
+    fetch('http://127.0.0.1:80/pets', {
+      method: 'GET',
     })
       .then((res) => res.json())
       .then((res) => {
-        setLoading(false);
-        setPets(res);
-      });
-  }, []);
+        setLoading(false)
+        setPets(res)
+      })
+  }, [])
 
   return loading ? (
     <h1>Loading</h1>
@@ -31,5 +31,5 @@ export const PetsList = () => {
         </ul>
       )}
     </>
-  );
-};
+  )
+}
