@@ -44,6 +44,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "tsc": "tsc",
-    "generate-types": "restful-react import --file ./schema/pet_store.yaml --output ./src/models/PetStoreApi.tsx"
+    "generate-types": "restful-react import --file ./schema/pet_store.yaml --output ./src/models/PetStoreApi.tsx",
+    "generate-api": "restful-react import --config restful-react.config.js petStoreApi"
   }
 }

@@ -1,11 +1,11 @@
 import * as React from 'react'
 
-import useSWR from 'swr'
-
-import { Pet } from '../models/PetStoreApi'
+import { useListPetsAPI } from '../api/FooAPI'
 
 export const PetsList = () => {
-  const { data: pets, error } = useSWR<Pet[]>('http://localhost:3001/api/pets')
+  const { data: pets, error } = useListPetsAPI({
+    
+  })
 
   if (error) return <p>An error has occurred.</p>
   return (
