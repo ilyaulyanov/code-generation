@@ -1,7 +1,7 @@
 import * as React from 'react'
 
-import { useFindPetById } from '../api/Pet/useFindPetById'
-import type { Pet as PetType } from '../api/Types'
+import { useFindPetById } from '../../api/Pet/useFindPetById'
+import type { Pet as PetType } from '../../api/Types'
 
 interface IPetProps {
   id: PetType['id']

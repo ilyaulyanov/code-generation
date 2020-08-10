@@ -5,9 +5,9 @@ import {
   waitFor,
   screen,
   fireEvent,
-} from '../../tools/tests/react-testing-library'
-import { findPets, addPet } from '../../api/Pet/stubs/PetAPI'
-import { server } from '../../tools/mocks/server'
+} from '../../../tools/tests/react-testing-library'
+import { findPets, addPet } from '../../../api/Pet/stubs/PetAPI'
+import { server } from '../../../tools/mocks/server'
 import { PetsList } from '../PetsList'
 
 describe('Pets test', () => {

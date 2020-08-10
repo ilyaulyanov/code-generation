@@ -2,8 +2,8 @@ import * as React from 'react'
 
 import { queryCache } from 'react-query'
 
-import { useAddPet } from '../api/Pet/useAddPet'
-import { useFindPets } from '../api/Pet/useFindPets'
+import { useAddPet } from '../../api/Pet/useAddPet'
+import { useFindPets } from '../../api/Pet/useFindPets'
 
 export const PetsList = () => {
   const { error, data: pets } = useFindPets()
