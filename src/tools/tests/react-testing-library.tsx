@@ -1,20 +1,18 @@
 import * as React from 'react'
 
-import { SWRConfig } from 'swr'
+// import { ReactQueryConfigProvider } from 'react-query'
+// import { AxiosRequestConfig } from 'axios'
 
 import { render, RenderOptions } from '@testing-library/react'
 
-import { fetcher } from '../fetcher'
+// import { fetcher } from '../fetcher'
+// import { client } from '../../api/client'
 
 const AppProviders = ({ children }: { children: React.ReactNode }) => {
   return (
-    <SWRConfig
-      value={{
-        fetcher,
-      }}
-    >
+    <>
       {children}
-    </SWRConfig>
+    </>
   )
 }
 

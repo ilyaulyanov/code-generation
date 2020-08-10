@@ -5,8 +5,33 @@
 
 export interface components {
   schemas: {
-    Pet: { id: number; name: string; tag?: string };
-    Pets: components["schemas"]["Pet"][];
+    /**
+     * A pet.
+     */
+    Pet: components["schemas"]["NewPet"] & { id: number };
+    /**
+     * A new pet.
+     */
+    NewPet: { name: string; tag?: string };
+    /**
+     * A discriminator example.
+     */
+    CatOrDog: components["schemas"]["Cat"] | components["schemas"]["Dog"];
+    /**
+     * A cat, meow.
+     */
+    Cat: { type: string; breed: "labrador" | "carlin" | "beagle" };
+    /**
+     * A dog, wooof.
+     */
+    Dog: { type: string; breed: "saimois" | "bengal" | "british shorthair" };
+    /**
+     * An error :(
+     */
     Error: { code: number; message: string };
+    /**
+     * Request description
+     */
+    Request: { action?: ("create" | "read" | "update" | "delete")[] };
   };
 }
