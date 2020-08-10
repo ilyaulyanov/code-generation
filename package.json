@@ -33,7 +33,6 @@
     "react-query": "^2.5.13",
     "request": "^2.88.2",
     "restful-react": "^14.3.0",
-    "swr": "^0.3.0",
     "typescript": "^3.9.7",
     "yarn": "^1.22.4"
   },
