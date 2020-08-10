@@ -1,10 +1,13 @@
 import '@testing-library/jest-dom'
 import { act, configure, } from '@testing-library/react'
 import { queryCache } from 'react-query'
+import faker from 'faker'
 
 import { server } from './mocks/server'
 
 configure({ defaultHidden: true })
+
+faker.seed(537846)
 
 beforeAll(() => {
   // Enable the mocking in tests.
