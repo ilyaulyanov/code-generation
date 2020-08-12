@@ -15,6 +15,7 @@ export const findPetById = rest.get(
     const { petId } = req.params
     const pet = PetStub.build({
       id: parseInt(petId, 10),
+      tag: 'Small dog'
     })
 
     return res(ctx.delay(0), ctx.status(200), ctx.json(pet))

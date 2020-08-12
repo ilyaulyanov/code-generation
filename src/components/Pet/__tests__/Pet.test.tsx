@@ -10,6 +10,13 @@ describe('Pets test', () => {
     server.use(findPetById)
     render(<Pet id={1} />)
 
-    await waitFor(() => screen.getByText(/Pet/i))
+    await waitFor(() => screen.getByText('Pet'))
+  })
+
+  it('should show tag capitalized', async () => {
+    server.use(findPetById)
+    render(<Pet id={1} />)
+
+    await waitFor(() => screen.getByText(/SMALL DOG/))
   })
 })
