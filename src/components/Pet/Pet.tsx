@@ -19,6 +19,7 @@ export const Pet = ({ id }: IPetProps) => {
         <>
           <h1>Pet</h1>
           {pet.name}
+          {pet.tag && <p>Pet tag: {pet.tag.toUpperCase()}</p>}
         </>
       )}
     </>
