@@ -12,15 +12,15 @@ import { PetsList } from '../PetsList'
 
 describe('Pets test', () => {
   it('should render', async () => {
-    server.use(findPets)
+    server.use(findPets())
     render(<PetsList />)
 
     await waitFor(() => screen.getByText(/List of pets/i))
   })
 
   it('should add pets', async () => {
-    server.use(findPets)
-    server.use(addPet)
+    server.use(findPets())
+    server.use(addPet())
 
     render(<PetsList />)
     await waitFor(() => screen.getByText(/List of pets/i))
