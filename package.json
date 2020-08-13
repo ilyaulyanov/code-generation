@@ -50,7 +50,7 @@
     "test:watch": "jest --watch",
     "tsc": "tsc",
     "generate-api": "restful-react import --config restful-react.config.js petStoreApi",
-    "postgenerate-api": "ts-node-transpile-only -s ./schema/schemaTransformer.ts",
+    "postgenerate-api": "ts-node-transpile-only -s ./schema/schemaTransformer.ts && eslint './src/api/Types.tsx' --fix",
     "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet",
     "lint-fix": "yarn lint --fix"
   },

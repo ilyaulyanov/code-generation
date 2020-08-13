@@ -12,12 +12,15 @@ const AppProviders = ({ children }: { children: React.ReactNode }) => {
   return <>{children}</>
 }
 
-const renderWithProviders = <P extends {}, Q extends {}>(
+const renderWithProviders = <
+  P extends Record<string, unknown>,
+  Q extends Record<string, unknown>
+>(
   ui: React.ReactElement<P>,
   options?: RenderOptions<Q>,
 ) => {
   return render(ui, {
-    wrapper: AppProviders as React.FunctionComponent<{}>,
+    wrapper: AppProviders as React.FunctionComponent<Record<string, unknown>>,
     ...options,
   })
 }
