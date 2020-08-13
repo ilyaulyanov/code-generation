@@ -81,7 +81,7 @@ jobs:
   test:
     working_directory: /home/circleci/project
     docker:
-      - image: circleci/node:12
+      - image: circleci/node:13
     steps:
       - *checkout-shallow
       - <<: *restore_yarn_cache
