@@ -45,7 +45,6 @@
     "test:watch": "jest --watch",
     "tsc": "tsc",
     "generate-api": "restful-react import --config restful-react.config.js petStoreApi",
-    "postgenerate-api": "node ./schema/schemaTransformer.ts",
-    "foo": "ts-node-transpile-only -s ./schema/schemaTransformer.ts"
+    "postgenerate-api": "ts-node-transpile-only -s ./schema/schemaTransformer.ts"
   }
 }

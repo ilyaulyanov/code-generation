@@ -1,0 +1,23 @@
+{
+  "presets": [
+    [
+      "@babel/env",
+      {
+        "debug": false,
+        "corejs": 3,
+        "modules": false,
+        "targets": {
+          "node": "12"
+        },
+        "useBuiltIns": "usage",
+        "loose": false
+      }
+    ],
+    "@babel/react",
+    "@babel/typescript"
+  ],
+  "plugins": [
+    "@babel/plugin-transform-modules-commonjs",
+    "@babel/plugin-proposal-optional-chaining"
+  ]
+}
