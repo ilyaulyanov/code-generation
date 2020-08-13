@@ -29,8 +29,10 @@
     "eslint-plugin-react": "^7.20.6",
     "factory.ts": "^0.5.1",
     "faker": "^4.1.0",
+    "husky": "^4.2.5",
     "jest": "^26.2.2",
     "jest-environment-jsdom-sixteen": "^1.0.3",
+    "lint-staged": "^10.2.11",
     "msw": "^0.20.3",
     "prettier": "^2.0.5",
     "react": "^16.13.1",
@@ -49,9 +51,20 @@
     "tsc": "tsc",
     "generate-api": "restful-react import --config restful-react.config.js petStoreApi",
     "postgenerate-api": "ts-node-transpile-only -s ./schema/schemaTransformer.ts",
-    "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix"
+    "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet",
+    "lint-fix": "yarn lint --fix"
   },
   "engines": {
     "node": ">=13"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "eslint --fix"
+    ]
   }
 }
