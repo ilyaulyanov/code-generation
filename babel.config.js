@@ -5,7 +5,7 @@ module.exports = (api) => {
     [
       '@babel/env',
       {
-        // debug: true,
+        debug: true,
         corejs: 3,
         modules: false,
         targets: [
@@ -24,13 +24,9 @@ module.exports = (api) => {
     '@babel/react',
     '@babel/typescript',
   ]
-  const plugins = [
-    '@babel/plugin-proposal-optional-chaining',
-  ]
+  const plugins = ['@babel/plugin-proposal-optional-chaining']
 
-  if (env === 'test') {
-    plugins.unshift('@babel/plugin-transform-modules-commonjs')
-  }
+  plugins.unshift('@babel/plugin-transform-modules-commonjs')
 
   // https://stackoverflow.com/questions/52407499/how-do-i-use-babels-usebuiltins-usage-option-on-the-vendors-bundle
   const ignore = [/\/core-js/]

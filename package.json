@@ -8,6 +8,7 @@
   "devDependencies": {
     "@babel/cli": "^7.10.5",
     "@babel/core": "^7.11.1",
+    "@babel/node": "^7.10.5",
     "@babel/plugin-proposal-optional-chaining": "^7.11.0",
     "@babel/plugin-transform-modules-commonjs": "^7.10.4",
     "@babel/preset-env": "^7.11.0",
@@ -27,12 +28,15 @@
     "jest": "^26.2.2",
     "jest-environment-jsdom-sixteen": "^1.0.3",
     "msw": "^0.20.3",
+    "nodemon": "^2.0.4",
     "prettier": "^2.0.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-query": "^2.5.13",
     "request": "^2.88.2",
     "restful-react": "^14.3.0",
+    "ts-morph": "^7.3.0",
+    "ts-node": "^8.10.2",
     "typescript": "^3.9.7",
     "yarn": "^1.22.4"
   },
@@ -41,6 +45,7 @@
     "test:watch": "jest --watch",
     "tsc": "tsc",
     "generate-api": "restful-react import --config restful-react.config.js petStoreApi",
-    "swagger-generate-api": "npx @manifoldco/swagger-to-ts schema/pet_store.yaml --output schema.ts"
+    "postgenerate-api": "node ./schema/schemaTransformer.ts",
+    "foo": "ts-node-transpile-only -s ./schema/schemaTransformer.ts"
   }
 }

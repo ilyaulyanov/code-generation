@@ -12,7 +12,9 @@ export const PetsList = () => {
   const [mutateAddPet] = useAddPet({
     onSuccess: (createdPet) => {
       setCreated(true)
-      queryCache.setQueryData('/pets', [...pets, createdPet])
+      if (pets && pets?.length > 0) {
+        queryCache.setQueryData('/pets', [...pets, createdPet])
+      }
     },
   })
 
