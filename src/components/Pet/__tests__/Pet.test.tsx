@@ -21,7 +21,7 @@ describe('Pets test', () => {
 
   it('should show tag capitalized', async () => {
     const pet = PetStub.build({
-      tag: 'Small Dog'
+      tag: 'Small Dog',
     })
     server.use(
       findPetById({

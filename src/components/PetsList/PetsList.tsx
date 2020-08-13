@@ -38,8 +38,7 @@ export const PetsList = () => {
           ev.preventDefault()
           try {
             await mutateAddPet()
-          } catch {
-          }
+          } catch {}
         }}
       >
         Add pet

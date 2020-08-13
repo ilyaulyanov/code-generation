@@ -22,7 +22,14 @@ export function useFindPetById(
   pathParams: FindPetByIdPathParams,
   config?: QueryOptions<Pet, Error>,
 ) {
-  return useQuery([queryKey, {
-    ...pathParams
-  }], findPetById, config)
+  return useQuery(
+    [
+      queryKey,
+      {
+        ...pathParams,
+      },
+    ],
+    findPetById,
+    config,
+  )
 }

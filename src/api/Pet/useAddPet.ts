@@ -6,7 +6,7 @@ import { client } from '../client'
 export const addPet = async () => {
   const { data } = await client.request({
     method: 'POST',
-    url: '/pets'
+    url: '/pets',
   })
   return data
 }

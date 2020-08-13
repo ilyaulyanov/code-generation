@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom'
-import { act, configure, } from '@testing-library/react'
+import { act, configure } from '@testing-library/react'
 import { queryCache } from 'react-query'
 import faker from 'faker'
 
@@ -26,7 +26,7 @@ beforeAll(() => {
 afterEach(() => {
   // Reset any runtime handlers tests may use.
   server.resetHandlers()
-  act(() => queryCache.clear());
+  act(() => queryCache.clear())
 })
 
 afterAll(() => {

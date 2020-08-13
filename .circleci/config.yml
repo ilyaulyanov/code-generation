@@ -92,6 +92,7 @@ jobs:
           paths:
             - ~/.cache/yarn
       - run: yarn generate-api
+      - run: yarn lint
       - run: yarn tsc
       - run: yarn test
 

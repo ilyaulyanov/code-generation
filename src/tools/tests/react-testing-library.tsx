@@ -9,11 +9,7 @@ import { render, RenderOptions } from '@testing-library/react'
 // import { client } from '../../api/client'
 
 const AppProviders = ({ children }: { children: React.ReactNode }) => {
-  return (
-    <>
-      {children}
-    </>
-  )
+  return <>{children}</>
 }
 
 const renderWithProviders = <P extends {}, Q extends {}>(
