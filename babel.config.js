@@ -5,7 +5,7 @@ module.exports = (api) => {
     [
       '@babel/env',
       {
-        debug: true,
+        debug: false,
         corejs: 3,
         modules: false,
         targets: [
