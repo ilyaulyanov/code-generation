@@ -1,12 +1,6 @@
 import * as React from 'react'
 
-// import { ReactQueryConfigProvider } from 'react-query'
-// import { AxiosRequestConfig } from 'axios'
-
-import { render, RenderOptions } from '@testing-library/react'
-
-// import { fetcher } from '../fetcher'
-// import { client } from '../../api/client'
+import { render, RenderOptions, Queries } from '@testing-library/react'
 
 const AppProviders = ({ children }: { children: React.ReactNode }) => {
   return <>{children}</>
@@ -14,7 +8,7 @@ const AppProviders = ({ children }: { children: React.ReactNode }) => {
 
 const renderWithProviders = <
   P extends Record<string, unknown>,
-  Q extends Record<string, unknown>
+  Q extends Queries
 >(
   ui: React.ReactElement<P>,
   options?: RenderOptions<Q>,
