@@ -1,32 +1,37 @@
 import { rest } from 'msw'
 
-import { Pet } from '../../Types'
+import { Pet, NewPet, FindPetByIdPathParams } from '../../Types'
 import { PetStub } from './PetStub'
 import { endpoint } from '../../endpoint'
 
-export const findPets = (pets?: Pet[]) =>
-  rest.get(`${endpoint}/pets`, (_, res, ctx) => {
-    const PetResponse = pets ?? PetStub.buildList(10)
+export const findPets = (petResponse?: Pet[]) =>
+  rest.get(`${endpoint}/pets`, (req, res, ctx) => {
+    console.log(req)
+    const PetResponse = petResponse ?? PetStub.buildList(10)
 
     return res(ctx.delay(0), ctx.status(200), ctx.json(PetResponse))
   })
 
-export const findPetById = (pet?: Pet) =>
-  rest.get(`${endpoint}/pets/:petId`, (req, res, ctx) => {
-    const { petId } = req.params
+export const findPetById = (
+  parameters: FindPetByIdPathParams,
+  petResponse?: Pet,
+) =>
+  rest.get(`${endpoint}/pets/:petId`, (_, res, ctx) => {
+    const { id } = parameters
 
     const PetResponse = {
-      ...(pet ?? PetStub.build()),
-      id: parseInt(petId, 10),
+      ...(petResponse ?? PetStub.build()),
+      id,
     }
 
     return res(ctx.delay(0), ctx.status(200), ctx.json(PetResponse))
   })
 
-export const addPet = (pet?: Pet) =>
+export const addPet = (requestBody: NewPet) =>
   rest.post(`${endpoint}/pets`, (_, res, ctx) => {
     const PetResponse = {
-      ...(pet ?? PetStub.build()),
+      ...PetStub.build(),
+      ...requestBody,
     }
 
     return res(ctx.delay(0), ctx.status(200), ctx.json(PetResponse))
