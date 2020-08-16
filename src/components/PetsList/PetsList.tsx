@@ -5,7 +5,7 @@ import { queryCache } from 'react-query'
 import { useAddPet } from '../../api/Pet/useAddPet'
 import { useFindPets } from '../../api/Pet/useFindPets'
 
-export const PetsList = () => {
+export const PetsList = (): JSX.Element => {
   const { error, data: pets } = useFindPets()
   const [created, setCreated] = React.useState(false)
 
@@ -26,7 +26,7 @@ export const PetsList = () => {
         <>
           <h1>List of pets</h1>
           <ul>
-            {pets.map((pet: any) => (
+            {pets.map((pet) => (
               <li key={pet.id}>{pet.name}</li>
             ))}
           </ul>
