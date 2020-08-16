@@ -8,6 +8,7 @@ type FindPetsQuery = [typeof queryKey, FindPetsQueryParams]
 
 export const findPets = async (...args: FindPetsQuery) => {
   const [, params] = args
+  console.log('findPets', params)
 
   const { data } = await client.request<Pet[]>({
     url: queryKey,

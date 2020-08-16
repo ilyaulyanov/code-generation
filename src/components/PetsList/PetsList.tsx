@@ -6,7 +6,9 @@ import { useAddPet } from '../../api/Pet/useAddPet'
 import { useFindPets } from '../../api/Pet/useFindPets'
 
 export const PetsList = (): JSX.Element => {
-  const { error, data: pets } = useFindPets()
+  const { error, data: pets } = useFindPets({
+    limit: 2,
+  })
   const [created, setCreated] = React.useState(false)
 
   const [mutateAddPet] = useAddPet({
