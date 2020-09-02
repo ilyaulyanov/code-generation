@@ -1,4 +1,4 @@
 import axios from 'axios'
-import { endpoint } from './endpoint'
+import { base } from './endpoint'
 
-export const client = axios.create({ baseURL: endpoint })
+export const client = axios.create({ baseURL: base })

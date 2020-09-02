@@ -36,11 +36,15 @@ describe('Pets test', () => {
     await waitFor(() => screen.getByText(/has been added/i))
   })
 
-  it.only('should return n results when limit is set', async () => {
-    const MockedFindPets = findPets()
-    server.use(MockedFindPets)
+  it('should return n results when limit is set', async () => {
+    const FindPets = findPets()
+    server.use(FindPets)
 
     render(<PetsList />)
     await waitFor(() => screen.getByText(/List of pets/i))
+
+    const PetItems = screen.getAllByRole('listitem')
+
+    expect(PetItems).toHaveLength(2)
   })
 })
