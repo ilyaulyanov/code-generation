@@ -13,7 +13,7 @@ import { PetStub } from '../../../api/Pet/stubs/PetStub'
 describe('Pets test', () => {
   it('should render', async () => {
     const pet = PetStub.build()
-    server.use(findPetById(pet))
+    server.use(findPetById({ id: pet.id }, pet))
     render(<Pet id={1} />)
 
     await waitFor(() => screen.getByText(pet.name))
@@ -23,11 +23,7 @@ describe('Pets test', () => {
     const pet = PetStub.build({
       tag: 'Small Dog',
     })
-    server.use(
-      findPetById({
-        ...pet,
-      }),
-    )
+    server.use(findPetById({ id: pet.id }, { ...pet }))
     render(<Pet id={1} />)
 
     await waitFor(() => screen.getByText(/SMALL DOG/))
