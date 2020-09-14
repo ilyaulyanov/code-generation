@@ -173,7 +173,7 @@ components:
         name:
           type: string
         tag:
-          type: string
+          type: number
 
     CatOrDog:
       description: A discriminator example.
